@@ -73,7 +73,7 @@ const JobLists = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center mx-20">
+    <div className="flex flex-col items-center justify-center mx-5 sm:mx-10 md:mx-15">
       <h2 className="font-extrabold gradient-tite text-6xl sm:text7xl text-center pb-8 mx-auto">
         Latest Jobs
       </h2>

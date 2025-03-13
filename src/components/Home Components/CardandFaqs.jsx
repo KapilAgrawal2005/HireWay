@@ -11,27 +11,28 @@ import {
 const CardandFaqs = () => {
   return (
     <>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <section className="flex flex-col gap-4">
         {/* cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>For Job Seekers</CardTitle>
+            </CardHeader>
+            <CardContent>
+              Search and apply for jobs, get matched with the right job and get
+              hired.
+            </CardContent>
+          </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>For Job Seekers</CardTitle>
-          </CardHeader>
-          <CardContent>
-            Search and apply for jobs, get matched with the right job and get
-            hired.
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>For Hirers</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>Post jobs, manage applications and find the best candidate.</p>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>For Hirers</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Post jobs, manage applications and find the best candidate.</p>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* accordion */}
 

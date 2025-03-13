@@ -29,7 +29,7 @@ const SavedJobs = () => {
     );
   }
   return (
-    <div className="mx-20">
+    <div className="mx-5 sm:mx-10 md:mx-15">
       <h1 className="font-extrabold text-6xl sm:text-7xl text-center pb-8">
         Saved Jobs
       </h1>

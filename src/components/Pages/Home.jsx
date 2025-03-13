@@ -5,7 +5,7 @@ import CardandFaqs from "../Home Components/CardandFaqs";
 const Home = () => {
   return (
     <>
-      <main className="min-h-screen mx-20 flex flex-col gap-10 sm:gap-20 py-10 sm:py-20">
+      <main className="min-h-screen mx-5 sm:mx-10 md:mx-15 flex flex-col gap-10 sm:gap-20 py-10 sm:py-20">
         <Hero />
         <CarousalandBanner />
         <CardandFaqs />

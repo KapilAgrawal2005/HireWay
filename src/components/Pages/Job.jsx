@@ -51,7 +51,7 @@ const Job = () => {
     );
   }
   return (
-    <div className="flex flex-col mx-20 mt-5 gap-6">
+    <div className="flex flex-col mx-5 sm:mx-10 md:mx-15 mt-5 gap-6">
       <div className="flex flex-col-reverse gap-6 items-center justify-between sm:flex-row">
         <h2 className="gradiant-title font-extrabold pb-3 text-4xl sm:text-6xl">
           {job?.title}
