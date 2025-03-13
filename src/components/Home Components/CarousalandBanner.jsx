@@ -13,7 +13,7 @@ const CarousalandBanner = () => {
             delay: 2000,
           }),
         ]}
-        className="w-full py-10 z-0"
+        className="w-full py-10"
       >
         <CarouselContent className="flex gap-5 sm:gap-20 items-center">
           {companies.map(({ name, path, id }) => (
