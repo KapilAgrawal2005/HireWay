@@ -38,7 +38,7 @@ const Header = () => {
         </Link>
 
         <div className="flex gap-8">
-          <SignedOut>
+          <SignedOut className="z-10">
             <Button
               variant="outline"
               onClick={() => {
