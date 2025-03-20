@@ -10,7 +10,7 @@ import {
   useUser,
 } from "@clerk/clerk-react";
 import { BriefcaseBusinessIcon, Heart, PenBox } from "lucide-react";
-
+import GoogleTranslate from "./GoogleTranslate";
 const Header = () => {
   const [showSignIn, setShowSignIn] = useState(false);
   const [search, setSearch] = useSearchParams();
@@ -36,7 +36,7 @@ const Header = () => {
         <Link to="/">
           <img src={logo} className="h-15" />
         </Link>
-
+        <GoogleTranslate />
         <div className="flex gap-8">
           <SignedOut className="z-10">
             <Button
