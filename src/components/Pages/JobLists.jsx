@@ -18,7 +18,6 @@ import {
 import { State } from "country-state-city";
 
 const JobLists = () => {
-  // here these three states are used to make sure that in starting all three filters are empty or null
 
   const [location, setLocation] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,7 +25,6 @@ const JobLists = () => {
 
   const { isLoaded } = useUser();
 
-  // using useFetch we are fetching the data and destructuring it
   const {
     fxn: fetchJobs,
     data: jobs,
@@ -36,7 +34,6 @@ const JobLists = () => {
 
   const { fxn: fetchCompanies, data: companies } = useFetch(getCompanies);
 
-  // these useEffects are used to manage the rendering like if the data is loaded then call the function
   useEffect(() => {
     if (isLoaded) {
       fetchCompanies();

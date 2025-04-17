@@ -15,14 +15,12 @@ import { deleteJob, saveJobs } from "../../Api/jobsapi";
 import { ClipLoader } from "react-spinners";
 
 const JobCard = ({
-  job, // the data of a particular job
-  isMyJob = false, // this is fo recruiter, if recruiter create a job then tht will be inside the isMyjob
-  savedInit = false, //for candidate, it's will be used when a cndidate saves or wishlists a job
-  onJobSave = () => {}, //function for saving the jobs, will we used when the candidate will click on save job
+  job,
+  isMyJob = false,
+  savedInit = false,
+  onJobSave = () => {},
 }) => {
   const [saved, setSaved] = useState(savedInit);
-
-  //   this useFetch will fetch the details of the jobs of the savedJobs page from the saveJobs function
   const {
     fxn: saveJob,
     data: savedJobs,
@@ -38,16 +36,13 @@ const JobCard = ({
     onJobSave();
   };
 
-  const { user } = useUser(); //useUser provide the detail of user
-
-  //handleSavedJobs function will call the saveJobs function which is written in the jobsapi.js with passing of user_id and job_id
+  const { user } = useUser();
 
   const handleSavedJobs = async () => {
     await saveJob({ user_id: user.id, job_id: job.id });
     onJobSave();
   };
 
-  //   this useEffect is used to prevent the rerendering it mean the saved jabs page will only rerender when the candidate click on the heart icon
   useEffect(() => {
     if (savedJobs !== undefined) {
       setSaved(savedJobs?.length > 0);
@@ -98,10 +93,6 @@ const JobCard = ({
             </Button>
           </Link>
 
-          {/* firstly we will check if the recruiter is checking the joblists page:
-         -> if yes then don't need to show the heart/wishlist icon because recruiter will not any job then  
-         -> if no it means candidate is seeing the joblists page then we will show the heart icon */}
-
           {!isMyJob && (
             <Button
               className="rounded-full h-[32px] w-[30px] cursor-pointer"
@@ -109,10 +100,6 @@ const JobCard = ({
               onClick={handleSavedJobs}
               disabled={loadingSavedJobs}
             >
-              {/* now will check whether the job is already saved :
-            -> if yes then we will show the filled heart icon 
-            -> if not then we will show the empty heart icon */}
-
               {saved ? (
                 <Heart size={35} stroke="red" fill="red" />
               ) : (

@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 
 const GoogleTranslate = () => {
   useEffect(() => {
-    // Check if the script is already loaded
     if (!window.google || !window.google.translate) {
-      // Check if the script is already being loaded
       if (!window.googleTranslateScriptLoaded) {
         // Load the Google Translate script dynamically
         const script = document.createElement("script");
@@ -13,10 +11,8 @@ const GoogleTranslate = () => {
         script.async = true;
         document.body.appendChild(script);
 
-        // Mark the script as loaded
         window.googleTranslateScriptLoaded = true;
 
-        // Define the initialization function
         window.googleTranslateElementInit = () => {
           new window.google.translate.TranslateElement(
             { pageLanguage: "en" },
@@ -25,13 +21,10 @@ const GoogleTranslate = () => {
         };
       }
     } else {
-      // If the script is already loaded, initialize the widget directly
       window.googleTranslateElementInit();
     }
 
-    // Cleanup function to avoid memory leaks
     return () => {
-      // Cleanup logic (if needed)
     };
   }, []);
 
