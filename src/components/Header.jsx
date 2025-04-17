@@ -16,8 +16,6 @@ const Header = () => {
   const [search, setSearch] = useSearchParams();
   const { user } = useUser();
 
-  // yanha maine ek route banaya hai like "sign-in" name se. ye isiliye hai agar manlo koi user login nhi karta hai or kisi doosre page per jane ki try karta hai by direct give the path then wo sidha pehle login page pe aa jaayega
-
   useEffect(() => {
     if (search.get("sign-in")) {
       setShowSignIn(true);
